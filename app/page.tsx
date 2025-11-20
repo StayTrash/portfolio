@@ -336,7 +336,7 @@ const HomeView = ({ textEnter, textLeave }: { textEnter: () => void; textLeave: 
             <div>
               <p className="text-gray-500 text-xs mb-6 leading-relaxed">Have an exciting project or job opening? Dive into my résumé.</p>
               <a 
-                href="https://example.com/your-cv.pdf" 
+                href="https://drive.google.com/file/d/1quSWoSq-JGLKgNFMksMkY4jmsJzpll4z/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-white text-black py-3 px-5 rounded-lg font-semibold flex items-center justify-between hover:bg-gray-200 transition-colors cursor-pointer"
