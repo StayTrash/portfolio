@@ -9,7 +9,7 @@ import HeroSection from '@/components/HeroSection';
 import HomeGrid from '@/components/HomeGrid';
 
 export default function Home() {
-  const { variants, cursorVariant, textEnter, textLeave } = useCursor();
+  const { variants, cursorVariant, textEnter, textLeave, redTextEnter, redTextLeave } = useCursor();
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans relative cursor-none selection:bg-white selection:text-black overflow-x-hidden">
@@ -17,7 +17,7 @@ export default function Home() {
       <Cursor variants={variants} cursorVariant={cursorVariant} />
       <Navigation textEnter={textEnter} textLeave={textLeave} />
       <HeroSection textEnter={textEnter} textLeave={textLeave} />
-      <HomeGrid textEnter={textEnter} textLeave={textLeave} />
+      <HomeGrid textEnter={textEnter} textLeave={textLeave} redTextEnter={redTextEnter} redTextLeave={redTextLeave} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { CursorVariants } from '@/hooks/useCursor';
 
 interface CursorProps {
   variants: CursorVariants;
-  cursorVariant: "default" | "text";
+  cursorVariant: "default" | "text" | "redText";
 }
 
 export default function Cursor({ variants, cursorVariant }: CursorProps) {

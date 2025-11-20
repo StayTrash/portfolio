@@ -61,11 +61,12 @@ export const work_tags = [
 
 export const social_icons = [
   { name: "Mail", href: "mailto:shubhamkumar200308@gmail.com" },
+  { name: "X", href: "https://x.com/shubham__0_5" },
   { name: "Github", href: "https://github.com" },
   { name: "Linkedin", href: "https://linkedin.com" },
   { name: "Instagram", href: "https://instagram.com" },
   { name: "Layers", href: "#" },
-  { name: "Phone", href: "tel:+8521298191" },
+  { name: "Phone", href: "tel:+91-8521298191" },
   { name: "MessageCircle", href: "https://wa.me/8521298191" }
 ];
 
@@ -73,8 +74,8 @@ export const contact_info = {
   email: "shubhamkumar200308@gmail.com",
   whatsapp: "https://wa.me/8521298191",
   location: {
-    coordinates: "23.2599° N, 77.4126° E",
-    mapUrl: "https://www.google.com/maps?q=23.2599,77.4126"
+    coordinates: "23.4133157° N, 85.4044843° E",
+    mapUrl: "https://www.google.com/maps?q=23.4133157,85.4044843"
   }
 };
 

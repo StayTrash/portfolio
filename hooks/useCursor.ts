@@ -17,11 +17,19 @@ export interface CursorVariants {
     backgroundColor: string;
     mixBlendMode: string;
   };
+  redText: {
+    height: number;
+    width: number;
+    x: number;
+    y: number;
+    backgroundColor: string;
+    mixBlendMode: string;
+  };
 }
 
 export function useCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState<"default" | "text">("default");
+  const [cursorVariant, setCursorVariant] = useState<"default" | "text" | "redText">("default");
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
@@ -47,17 +55,29 @@ export function useCursor() {
       y: mousePosition.y - 60,
       backgroundColor: "white",
       mixBlendMode: "difference"
+    },
+    redText: {
+      height: 120,
+      width: 120,
+      x: mousePosition.x - 60,
+      y: mousePosition.y - 60,
+      backgroundColor: "#ef4444",
+      mixBlendMode: "difference"
     }
   };
 
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
+  const redTextEnter = () => setCursorVariant("redText");
+  const redTextLeave = () => setCursorVariant("default");
 
   return {
     variants,
     cursorVariant,
     textEnter,
-    textLeave
+    textLeave,
+    redTextEnter,
+    redTextLeave
   };
 }
 

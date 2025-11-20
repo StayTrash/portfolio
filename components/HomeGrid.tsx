@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { 
-  Mail, Github, Linkedin, Instagram, Layers, Phone, MessageCircle, 
+  Mail, Github, Linkedin, Phone, 
   Download, Image as ImageIcon, MessageCircle as MessageCircleIcon
 } from 'lucide-react';
+import { FaXTwitter } from 'react-icons/fa6';
 import GridCell from '@/components/GridCell';
 import TechPile from '@/components/TechPile';
 import { work_tags, contact_info } from '@/constants/data';
@@ -12,17 +13,17 @@ import { work_tags, contact_info } from '@/constants/data';
 interface HomeGridProps {
   textEnter: () => void;
   textLeave: () => void;
+  redTextEnter?: () => void;
+  redTextLeave?: () => void;
 }
 
-export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
+export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLeave }: HomeGridProps) {
   const socialIcons = [
     { Icon: Mail, href: `mailto:${contact_info.email}` },
     { Icon: Github, href: "https://github.com" },
     { Icon: Linkedin, href: "https://linkedin.com" },
-    { Icon: Instagram, href: "https://instagram.com" },
-    { Icon: Layers, href: "#" },
     { Icon: Phone, href: `tel:+8521298191` },
-    { Icon: MessageCircle, href: contact_info.whatsapp }
+    { Icon: FaXTwitter, href: "https://x.com/shubham__0_5" }
   ];
 
   return (
@@ -30,7 +31,11 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full relative">
         
         <GridCell className="flex flex-col">
-          <h3 className="text-4xl font-bold text-red-600 mb-4 leading-tight">Hey, welcome to my site!</h3>
+          <h3 
+            className="text-4xl font-bold text-red-600 mb-4 leading-tight"
+            onMouseEnter={redTextEnter || textEnter}
+            onMouseLeave={redTextLeave || textLeave}
+          >Hey, welcome to my site!</h3>
           <p className="text-white text-base md:text-lg leading-relaxed mb-3 font-light">
             I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-1 text-white">caffeine addict</span> from India, merging design and code with flair.
           </p>
@@ -41,20 +46,20 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
 
         <GridCell className="flex flex-col justify-between">
           <div className="relative">
-            <h3 className="text-[4rem] leading-[0.9] font-medium text-white tracking-tight">Catch<br/>me<br/>on</h3>
+            <h3 className="text-[5rem] leading-[0.9] font-medium text-white tracking-wider">Catch<br/>me<br/>on</h3>
           </div>
-          <div className="grid grid-cols-4 gap-2 mt-8">
+          <div className="grid grid-cols-5 gap-2 mt-8">
             {socialIcons.map((item, i) => (
               <a
                 key={i}
                 href={item.href}
                 target={item.href.startsWith('http') ? "_blank" : undefined}
                 rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
-                className="aspect-square bg-transparent rounded-lg flex items-center justify-center hover:bg-white/10 transition-colors duration-300 cursor-pointer border border-white/20"
-                onMouseEnter={textEnter} 
-                onMouseLeave={textLeave}
+                className="aspect-square bg-transparent rounded-lg flex items-center justify-center transition-colors duration-300 cursor-pointer border border-white/20 group hover:border-red-600/50"
+                onMouseEnter={redTextEnter || textEnter} 
+                onMouseLeave={redTextLeave || textLeave}
               >
-                <item.Icon size={20} className="text-white" />
+                <item.Icon size={20} className="text-white group-hover:text-red-600 transition-colors duration-300" />
               </a>
             ))}
           </div>
@@ -86,7 +91,11 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
         </GridCell>
 
         <GridCell className="md:col-span-2 flex flex-col justify-center">
-          <h3 className="text-3xl font-bold text-red-600 mb-8">Who Am I ?</h3>
+          <h3 
+            className="text-3xl font-bold text-red-600 mb-8"
+            onMouseEnter={redTextEnter || textEnter}
+            onMouseLeave={redTextLeave || textLeave}
+          >Who Am I ?</h3>
           <div className="text-white text-base md:text-lg leading-relaxed space-y-6 font-light">
             <p>I'm a creative Full Stack Developer with <span className="line-through decoration-red-600 decoration-1 text-white">several years</span> of experience in the industry. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I've applied my skills across <span className="line-through decoration-red-600 decoration-1 text-white">Ed-Tech</span>, <span className="line-through decoration-red-600 decoration-1 text-white">Healthcare</span>, <span className="line-through decoration-red-600 decoration-1 text-white">E-Commerce</span> and <span className="line-through decoration-red-600 decoration-1 text-white">Service-Based industries</span>, consulting for international clients.</p>
             <p>When I'm not responding to your <span className="line-through decoration-red-600 decoration-1 text-white">texts</span> or <span className="line-through decoration-red-600 decoration-1 text-white">emails</span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
