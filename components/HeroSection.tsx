@@ -40,21 +40,21 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
           </h1>
         ))}
       </div>
-      <div className="z-20 relative flex flex-col items-center gap-0 md:gap-0">
+      <div className="z-20 relative flex flex-col items-center gap-0 md:gap-0 px-4">
           <div 
-            className="bg-[#0a0a0a] px-8 py-6 md:px-12 md:py-10 flex flex-row items-center gap-8 transform transition-transform duration-500 hover:scale-105 shadow-2xl border border-white"
+            className="bg-[#0a0a0a] px-6 py-5 md:px-12 md:py-10 flex flex-row items-center gap-4 md:gap-8 transform transition-transform duration-500 md:hover:scale-105 shadow-2xl border border-white w-full max-w-[90vw] md:max-w-none"
             onMouseEnter={textEnter} 
             onMouseLeave={textLeave}
           >
-              <div className="text-4xl md:text-7xl font-bold tracking-tight text-white leading-none pb-1">
+              <div className="text-3xl md:text-7xl font-bold tracking-tight text-white leading-none pb-1">
                 portfolio
               </div>
-              <div className="h-12 md:h-20 w-[1px] bg-white"></div>
-              <div className="flex flex-col items-start justify-center gap-1">
-                  <h2 className="text-lg md:text-2xl font-semibold text-white leading-tight">
-                    Arham Khan
+              <div className="h-10 md:h-20 w-[1px] bg-white flex-shrink-0"></div>
+              <div className="flex flex-col items-start justify-center gap-1 min-w-0">
+                  <h2 className="text-base md:text-2xl font-semibold text-white leading-tight truncate w-full">
+                    Shubham Kumar
                   </h2>
-                  <p className="text-xs md:text-sm text-gray-400 font-normal leading-tight">
+                  <p className="text-[10px] md:text-sm text-gray-400 font-normal leading-tight">
                     Creative Developer
                   </p>
               </div>
@@ -80,11 +80,11 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
             ))}
           </div>
       </div>
-      <div className="absolute bottom-6 left-6 md:left-12 z-20 text-sm">
-          <div className="text-white mb-1">Working as</div>
-          <div className="text-white font-semibold text-base md:text-lg">Full Stack Developer</div>
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-12 z-20 text-xs md:text-sm">
+          <div className="text-white mb-1 text-[10px] md:text-sm">Working as</div>
+          <div className="text-white font-semibold text-sm md:text-lg">Full Stack Developer</div>
       </div>
-      <div className="absolute bottom-6 right-6 md:right-12 z-20 text-sm text-white">
+      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-12 z-20 text-xs md:text-sm text-white">
           <div>2025</div>
       </div>
     </section>

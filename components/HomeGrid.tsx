@@ -26,8 +26,8 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
   ];
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] z-30 mb-24 pt-12 px-8 md:px-16 lg:px-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full relative">
+    <section className="relative w-full bg-[#0a0a0a] z-30 mb-16 md:mb-24 pt-8 md:pt-12 px-4 md:px-8 lg:px-16 xl:px-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full relative">
         
         <GridCell className="flex flex-col justify-between">
           <div>
