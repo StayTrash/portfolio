@@ -66,7 +66,7 @@ export const experience_data: Experience[] = [
   {
     role: "Frontend Developer",
     company: "Relish Developers Solutions",
-    date: "2025 - Present",
+    date: "June 2025 - Present",
     desc: "Built award-winning immersive web experiences for global brands."
   }
 ];
@@ -75,7 +75,7 @@ export const education_data: Education[] = [
   {
     degree: "Bachelor of Technology",
     institution: "Indian Institute of Information Technology, Ranchi",
-    date: "2022 - 2026",
+    date: "November 2022 - May 2026",
     desc: "Electronics and Communication Engineering"
   }
 ];
