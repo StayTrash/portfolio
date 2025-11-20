@@ -36,7 +36,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
               fontWeight: style.fontWeight || 'normal'
             }}
           >
-            PORTFOLIO
+            StayTrash
           </h1>
         ))}
       </div>
@@ -75,7 +75,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
                   fontWeight: style.fontWeight || 'normal'
                 }}
               >
-                PORTFOLIO
+                StayTrash
               </h1>
             ))}
           </div>

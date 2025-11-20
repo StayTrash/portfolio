@@ -48,7 +48,7 @@ export default function ShowcasePage() {
                     ))}
                   </div>
                </div>
-               <div className="absolute bottom-0 left-0 right-0 z-20 flex flex-row items-center justify-center gap-3 md:gap-4 p-4 md:p-0 md:inset-0 md:flex md:flex-col md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-black/80 md:bg-black/90 backdrop-blur-sm md:backdrop-blur-sm">
+               <div className="absolute bottom-0 left-0 right-0 z-20 flex flex-row items-center justify-center gap-3 md:gap-4 p-4 md:p-0 md:inset-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-black/80 md:bg-black/90 backdrop-blur-sm md:backdrop-blur-sm">
                   <a 
                     href={project.github} 
                     target="_blank" 

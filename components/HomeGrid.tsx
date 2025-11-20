@@ -29,14 +29,12 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
     <section className="relative w-full bg-[#0a0a0a] z-30 mb-16 md:mb-24 pt-8 md:pt-12 px-4 md:px-8 lg:px-16 xl:px-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full relative">
         
-        <GridCell className="flex flex-col justify-between">
-          <div>
-            <h3 className="text-4xl font-bold text-red-600 mb-6 leading-tight">Hey, welcome to my site!</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4 font-light">
-              I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-2 text-gray-600">caffeine addict</span> from India, merging design and code with flair.
-            </p>
-          </div>
-          <p className="text-gray-400 text-sm leading-relaxed font-light">
+        <GridCell className="flex flex-col">
+          <h3 className="text-4xl font-bold text-red-600 mb-4 leading-tight">Hey, welcome to my site!</h3>
+          <p className="text-white text-base md:text-lg leading-relaxed mb-3 font-light">
+            I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-1 text-white">caffeine addict</span> from India, merging design and code with flair.
+          </p>
+          <p className="text-white text-base md:text-lg leading-relaxed font-light">
             When I'm off the grid, you'll find me traveling, exploring new coffee shops.
           </p>
         </GridCell>
@@ -65,7 +63,7 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
         <GridCell className="flex flex-col justify-between">
           <h3 className="text-[3.5rem] leading-[0.95] font-medium text-white tracking-tight mb-4">Browse<br/>my<br/>résumé!</h3>
           <div>
-            <p className="text-gray-500 text-xs mb-6 leading-relaxed">Have an exciting project or job opening? Dive into my résumé.</p>
+            <p className="text-white text-base md:text-lg mb-6 leading-relaxed font-light">Have an exciting project or job opening? Dive into my résumé.</p>
             <a 
               href="https://drive.google.com/file/d/1quSWoSq-JGLKgNFMksMkY4jmsJzpll4z/view?usp=sharing" 
               target="_blank" 
@@ -89,9 +87,9 @@ export default function HomeGrid({ textEnter, textLeave }: HomeGridProps) {
 
         <GridCell className="md:col-span-2 flex flex-col justify-center">
           <h3 className="text-3xl font-bold text-red-600 mb-8">Who Am I ?</h3>
-          <div className="text-gray-300 text-sm md:text-base leading-8 space-y-6 font-light">
-            <p>I'm a creative Full Stack Developer with <span className="underline decoration-red-600 decoration-2 italic">several years</span> of experience in the industry. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I've applied my skills across <span className="underline decoration-red-600 decoration-2 italic">Ed-Tech</span>, <span className="underline decoration-red-600 decoration-2 italic">Healthcare</span>, <span className="underline decoration-red-600 decoration-2 italic">E-Commerce</span> and <span className="underline decoration-red-600 decoration-2 italic">Service-Based industries</span>, consulting for international clients.</p>
-            <p>When I'm not responding to your <span className="underline decoration-red-600 decoration-2 italic">texts</span> or <span className="underline decoration-red-600 decoration-2 italic">emails</span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
+          <div className="text-white text-base md:text-lg leading-relaxed space-y-6 font-light">
+            <p>I'm a creative Full Stack Developer with <span className="line-through decoration-red-600 decoration-1 text-white">several years</span> of experience in the industry. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I've applied my skills across <span className="line-through decoration-red-600 decoration-1 text-white">Ed-Tech</span>, <span className="line-through decoration-red-600 decoration-1 text-white">Healthcare</span>, <span className="line-through decoration-red-600 decoration-1 text-white">E-Commerce</span> and <span className="line-through decoration-red-600 decoration-1 text-white">Service-Based industries</span>, consulting for international clients.</p>
+            <p>When I'm not responding to your <span className="line-through decoration-red-600 decoration-1 text-white">texts</span> or <span className="line-through decoration-red-600 decoration-1 text-white">emails</span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
           </div>
         </GridCell>
 

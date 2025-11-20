@@ -119,9 +119,9 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
       <h3 className="text-3xl font-bold text-red-600 absolute top-8 left-8 z-10 pointer-events-none">
         What I Work With...
       </h3>
-      <div className="absolute top-8 right-8 z-10 pointer-events-none animate-pulse text-white/20">
+      {/* <div className="absolute top-8 right-8 z-10 pointer-events-none animate-pulse text-white/20">
         <MoveRight />
-      </div>
+      </div> */}
 
       {tech_stack_items.map((item, i) => (
         <div
