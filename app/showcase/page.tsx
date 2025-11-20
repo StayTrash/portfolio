@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { 
-  ArrowUpRight, Briefcase, Calendar, ExternalLink, Github
+  ArrowUpRight, Briefcase, Calendar, ExternalLink, Github, GraduationCap
 } from 'lucide-react';
 import { useCursor } from '@/hooks/useCursor';
 import GlobalStyles from '@/components/GlobalStyles';
 import Cursor from '@/components/Cursor';
 import Navigation from '@/components/Navigation';
 import GridCell from '@/components/GridCell';
-import { showcase_projects, experience_data } from '@/constants/showcase';
+import { showcase_projects, experience_data, education_data } from '@/constants/showcase';
 
 export default function ShowcasePage() {
   const { variants, cursorVariant, textEnter, textLeave } = useCursor();
@@ -89,6 +89,25 @@ export default function ShowcasePage() {
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 font-mono text-[10px] md:text-xs border border-white/10 px-3 py-1.5 md:py-1 rounded-full shrink-0">
                   <Calendar size={10} /> <span className="whitespace-nowrap">{exp.date}</span>
+                </div>
+              </GridCell>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-16 md:mb-24">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 md:mb-12 flex items-center gap-3 md:gap-4">
+            <GraduationCap className="text-red-500" size={24} /> Education
+          </h2>
+          <div className="space-y-4 md:space-y-5">
+            {education_data.map((edu, i) => (
+              <GridCell key={i} className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 py-6 md:py-8">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-1 break-words">{edu.degree} <span className="text-red-500">@ {edu.institution}</span></h3>
+                  <p className="text-gray-400 text-xs md:text-sm font-light">{edu.desc}</p>
+                </div>
+                <div className="flex items-center gap-2 text-gray-500 font-mono text-[10px] md:text-xs border border-white/10 px-3 py-1.5 md:py-1 rounded-full shrink-0">
+                  <Calendar size={10} /> <span className="whitespace-nowrap">{edu.date}</span>
                 </div>
               </GridCell>
             ))}
