@@ -226,7 +226,7 @@ const HomeView = ({ textEnter, textLeave }: { textEnter: () => void; textLeave: 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStyleIndex((prev) => (prev + 1) % styles.length);
-    }, 600);
+    }, 300);
     return () => clearInterval(interval);
   }, [styles.length]);
 
