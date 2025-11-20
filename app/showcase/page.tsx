@@ -147,7 +147,7 @@ export default function ShowcasePage() {
           onMouseEnter={textEnter} 
           onMouseLeave={textLeave}
         >
-          Shubham <span className="text-red-600">Designs</span><span className="w-2 h-2 bg-red-600 rounded-full">.</span>
+          Shubham <span className="text-red-600">Designs</span><span className="w-2 h-2 bg-red-600 rounded-full"></span>
         </Link>
         <Link 
           href="/"
