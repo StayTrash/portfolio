@@ -1,16 +1,15 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { 
   Mail, Github, Linkedin, Instagram, Layers, Phone, MessageCircle, 
   Download, Image as ImageIcon, Code, Database, Smartphone, Globe, 
-  Cpu, Server, Box, PenTool, Terminal, Command, MoveRight, Coffee, Zap,
-  ArrowUpRight, Briefcase, Calendar, ArrowLeft, ExternalLink
+  Cpu, Server, Box, PenTool, Terminal, Command, MoveRight, Coffee, Zap
 } from 'lucide-react';
 
 // --- Main App Container ---
 export default function Home() {
-  const [activePage, setActivePage] = useState('home');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
 
@@ -44,11 +43,6 @@ export default function Home() {
 
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
-
-  // Smooth scroll to top on page change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [activePage]);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans relative cursor-none selection:bg-white selection:text-black overflow-x-hidden">
@@ -191,34 +185,26 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 py-6 px-6 md:px-12 flex justify-between items-center z-50 mix-blend-difference pointer-events-none">
-        <div 
-          className="text-xl font-semibold tracking-tight pointer-events-auto cursor-pointer" 
+        <Link 
+          href="/"
+          className="text-xl font-semibold tracking-tight pointer-events-auto cursor-pointer flex items-center gap-2" 
           onMouseEnter={textEnter} 
           onMouseLeave={textLeave}
-          onClick={() => setActivePage('home')}
         >
-          Shubham
-        </div>
-        <button 
+          Shubham <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+        </Link>
+        <Link 
+          href="/showcase"
           className="pointer-events-auto px-6 py-2 rounded-full border border-red-600 text-red-500 hover:bg-red-600 hover:text-white transition-all duration-300 text-xs uppercase tracking-widest font-bold bg-black/50 backdrop-blur-sm flex items-center gap-2"
           onMouseEnter={textEnter} 
           onMouseLeave={textLeave}
-          onClick={() => setActivePage(activePage === 'home' ? 'showcase' : 'home')}
         >
-          {activePage === 'home' ? 'Showcase' : (
-            <>
-              <ArrowLeft size={14} /> Back Home
-            </>
-          )}
-        </button>
+          Showcase
+        </Link>
       </nav>
 
-      {/* View Router */}
-      {activePage === 'home' ? (
-        <HomeView textEnter={textEnter} textLeave={textLeave} />
-      ) : (
-        <ShowcaseView textEnter={textEnter} textLeave={textLeave} />
-      )}
+      {/* Home View */}
+      <HomeView textEnter={textEnter} textLeave={textLeave} />
     </div>
   );
 }
@@ -245,7 +231,7 @@ const HomeView = ({ textEnter, textLeave }: { textEnter: () => void; textLeave: 
   }, [styles.length]);
 
   return (
-    <div className="w-full px-4 md:px-12 pb-12 fade-in">
+    <div className="w-full px-4 md:px-12 pb-8 md:pb-12 fade-in">
       
       {/* Hero Section */}
       <section className="relative w-full h-screen flex flex-col items-center justify-center sticky top-0">
@@ -443,156 +429,6 @@ const HomeView = ({ textEnter, textLeave }: { textEnter: () => void; textLeave: 
           <div className="font-mono text-white opacity-50">2025</div>
         </footer> */}
       </section>
-    </div>
-  );
-};
-
-// --- SHOWCASE VIEW (NEW) ---
-const ShowcaseView = ({ textEnter, textLeave }: { textEnter: () => void; textLeave: () => void }) => {
-  const projects = [
-    {
-      title: "Neon E-Commerce",
-      desc: "A futuristic shopping platform built with React and WebGL product views.",
-      tags: ["React", "Three.js", "Stripe"],
-      color: "border-red-500",
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    {
-      title: "AI Task Manager",
-      desc: "Smart productivity app using OpenAI to auto-schedule your day.",
-      tags: ["Next.js", "OpenAI API", "Tailwind"],
-      color: "border-blue-500",
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    {
-      title: "Crypto Dashboard",
-      desc: "Real-time financial data visualization with websocket integrations.",
-      tags: ["Vue", "D3.js", "Firebase"],
-      color: "border-green-500",
-      github: "https://github.com",
-      live: "https://example.com"
-    },
-    {
-      title: "Social Graph",
-      desc: "Interactive visualization of social connections and network analysis.",
-      tags: ["React Flow", "GraphQL", "Neo4j"],
-      color: "border-purple-500",
-      github: "https://github.com",
-      live: "https://example.com"
-    }
-  ];
-
-  const experience = [
-    {
-      role: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      date: "2023 - Present",
-      desc: "Leading the frontend architecture for enterprise dashboard solutions."
-    },
-    {
-      role: "Creative Developer",
-      company: "Digital Agency X",
-      date: "2021 - 2023",
-      desc: "Built award-winning immersive web experiences for global brands."
-    },
-    {
-      role: "Freelance Developer",
-      company: "Self Employed",
-      date: "2019 - 2021",
-      desc: "Delivered 30+ projects ranging from e-commerce to portfolio sites."
-    }
-  ];
-
-  return (
-    <div className="w-full px-4 md:px-12 pt-32 pb-12 fade-in min-h-screen flex flex-col">
-      
-      {/* Header */}
-      <div className="mb-16">
-        <h1 className="text-[10vw] md:text-[6vw] font-bold text-white leading-none tracking-tighter mb-4">
-          SELECTED <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">WORKS</span>
-        </h1>
-        <p className="text-gray-400 max-w-xl text-lg font-light">
-          A curated collection of projects that push the boundaries of design and technology.
-        </p>
-      </div>
-
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-24">
-        {projects.map((project, i) => (
-          <GridCell key={i} className="flex flex-col justify-between min-h-[300px] group relative overflow-hidden">
-             <div className="relative z-10 transition-opacity duration-300 group-hover:opacity-20">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-3xl font-bold text-white group-hover:text-red-500 transition-colors">{project.title}</h3>
-                  <ArrowUpRight className="opacity-50 text-red-500" />
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.desc}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, j) => (
-                    <span key={j} className="text-[10px] uppercase tracking-wider border border-white/20 px-2 py-1 rounded text-gray-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-             </div>
-             {/* Hover Actions Overlay */}
-             <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/90 backdrop-blur-sm">
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold hover:bg-red-600 hover:text-white transition-all transform hover:scale-105"
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
-                >
-                  <Github size={20} />
-                  <span>Code</span>
-                </a>
-                <a 
-                  href={project.live} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-bold hover:bg-red-600 hover:text-white transition-all transform hover:scale-105"
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
-                >
-                  <ExternalLink size={20} />
-                  <span>Live</span>
-                </a>
-             </div>
-          </GridCell>
-        ))}
-      </div>
-
-      {/* Experience Section */}
-      <div className="mb-24">
-        <h2 className="text-4xl font-bold text-white mb-12 flex items-center gap-4">
-          <Briefcase className="text-red-500" /> Experience
-        </h2>
-        <div className="space-y-5">
-          {experience.map((exp, i) => (
-            <GridCell key={i} className="flex flex-col md:flex-row md:items-center justify-between gap-4 !py-8">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">{exp.role} <span className="text-red-500">@ {exp.company}</span></h3>
-                <p className="text-gray-400 text-sm font-light">{exp.desc}</p>
-              </div>
-              <div className="flex items-center gap-2 text-gray-500 font-mono text-xs border border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
-                <Calendar size={12} /> {exp.date}
-              </div>
-            </GridCell>
-          ))}
-        </div>
-      </div>
-
-      {/* Standard Footer */}
-      <footer className="w-full mt-auto flex justify-between items-end text-xs text-gray-500 border-t border-white/10 pt-8">
-        <div className="flex flex-col gap-1">
-            <span className="uppercase tracking-wider text-[10px]">Working as</span>
-            <span className="text-white font-medium">Full Stack Developer</span>
-        </div>
-        <div className="font-mono text-white opacity-50">2025</div>
-      </footer>
     </div>
   );
 };
