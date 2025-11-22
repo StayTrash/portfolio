@@ -32,15 +32,15 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
         
         <GridCell className="flex flex-col">
           <h3 
-            className="text-4xl font-bold text-red-600 mb-4 leading-tight"
+            className="text-3xl font-semibold text-red-600 mb-4 leading-tight"
             // onMouseEnter={redTextEnter || textEnter}
             // onMouseLeave={redTextLeave || textLeave}
           >Hey, welcome to my site!</h3>
           <p className="text-white text-base md:text-lg leading-relaxed mb-3 font-light">
-            I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-1 text-white">caffeine addict</span> from India, merging design and code with flair.
+            I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-2 text-white"><i>caffeine addict</i></span> from India, merging design and code with flair.
           </p>
           <p className="text-white text-base md:text-lg leading-relaxed font-light">
-            When I'm off the grid, you'll find me traveling, exploring new coffee shops.
+            When I'm off the grid, you'll find me traveling, exploring tracks and trails.
           </p>
         </GridCell>
 
@@ -68,7 +68,7 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
         <GridCell className="flex flex-col justify-between">
           <h3 className="text-[3.5rem] leading-[0.95] font-medium text-white tracking-tight mb-4">Browse<br/>my<br/>résumé!</h3>
           <div>
-            <p className="text-white text-base md:text-lg mb-6 leading-relaxed font-light">Have an exciting project or job opening? Dive into my résumé.</p>
+            <p className="text-gray-400 text-base md:text-lg mb-6 leading-relaxed font-light">Have an exciting project or job opening? Dive into my résumé.</p>
             <a 
               href="https://drive.google.com/file/d/1quSWoSq-JGLKgNFMksMkY4jmsJzpll4z/view?usp=sharing" 
               target="_blank" 
@@ -90,15 +90,17 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
           <p className="text-red-600 text-sm font-semibold max-w-[200px]">Oops, nothing to see here! I'm camera-shy!</p>
         </GridCell>
 
-        <GridCell className="md:col-span-2 flex flex-col justify-center">
+        <GridCell className="md:col-span-2 flex flex-col">
           <h3 
-            className="text-3xl font-bold text-red-600 mb-8 w-fit"
+            className="text-3xl font-semibold text-red-600 mb-4 leading-tight"
             // onMouseEnter={redTextEnter || textEnter}
             // onMouseLeave={redTextLeave || textLeave}
           >Who Am I ?</h3>
           <div className="text-white text-base md:text-lg leading-relaxed space-y-6 font-light max-w-4xl">
-            <p>I'm a creative Full Stack Developer with <span className="line-through decoration-red-600 decoration-1 text-white">several years</span> of experience in the industry. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I've applied my skills across <span className="line-through decoration-red-600 decoration-1 text-white">Ed-Tech</span>, <span className="line-through decoration-red-600 decoration-1 text-white">Healthcare</span>, <span className="line-through decoration-red-600 decoration-1 text-white">E-Commerce</span> and <span className="line-through decoration-red-600 decoration-1 text-white">Service-Based industries</span>, consulting for international clients.</p>
-            <p>When I'm not responding to your <span className="line-through decoration-red-600 decoration-1 text-white">texts</span> or <span className="line-through decoration-red-600 decoration-1 text-white">emails</span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
+            <p>I'm a creative Full Stack Developer. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I collect <span className="line-through decoration-red-600 decoration-2 text-white"><i>languages and frameworks</i></span> like travelers collect fridge magnets.</p>
+            <p>When I'm not responding to your <span className="line-through decoration-red-600 decoration-2 text-white"><i>texts</i></span> or <span className="line-through decoration-red-600 decoration-2 text-white"><i>emails</i></span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
+            <p>My <span className="line-through decoration-red-600 decoration-2 text-white"><i>commits</i></span> are like constellations—connecting dots in the dark to make something beautiful.</p>
+
           </div>
         </GridCell>
 
@@ -108,7 +110,7 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
 
         <GridCell className="md:col-span-1 lg:col-span-1 flex flex-col">
           <h3 
-            className="text-2xl md:text-3xl font-bold text-red-600 mb-6"
+            className="text-3xl font-semibold text-red-600 mb-6"
           >
             Tech Stack
           </h3>
@@ -138,7 +140,7 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
         </GridCell>
 
         <GridCell className="md:col-span-2">
-            <h3 className="text-3xl font-bold text-red-600 mb-8">What I Build & Worked On!</h3>
+            <h3 className="text-3xl font-semibold text-red-600 mb-8">What I Build & Worked On!</h3>
             <div className="flex flex-wrap gap-3 content-start">
               {work_tags.map((tag, i) => (
                 <span key={i} className="bg-[#111] border border-white/15 rounded-lg px-4 py-2.5 text-xs text-gray-300 flex items-center gap-2 hover:bg-[#222] transition-colors cursor-default font-medium">
@@ -150,7 +152,7 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
         </GridCell>
 
         <GridCell className="md:col-span-2 flex flex-col justify-center">
-            <h3 className="text-4xl md:text-5xl font-bold text-red-600 mb-3 tracking-tight">Got a brilliant project idea?</h3>
+            <h3 className="text-4xl md:text-5xl font-semibold text-red-600 mb-3 tracking-tight">Got a brilliant project idea?</h3>
             <h3 className="text-4xl md:text-5xl font-bold text-red-600 mb-10 tracking-tight">Let's make it come to life!</h3>
             <div className="flex flex-col md:flex-row gap-4 w-full mt-auto">
               <a 

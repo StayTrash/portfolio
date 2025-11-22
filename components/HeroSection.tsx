@@ -54,7 +54,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
                   <h2 className="text-base md:text-2xl font-semibold text-white leading-tight truncate w-full">
                     Shubham Kumar
                   </h2>
-                  <p className="text-[10px] md:text-sm text-gray-400 font-normal leading-tight">
+                  <p className="text-[10px] md:text-sm text-white-400 font-normal leading-tight">
                     Creative Developer
                   </p>
               </div>

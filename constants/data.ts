@@ -48,15 +48,18 @@ export const tech_stack_items: TechItem[] = [
 export const work_tags = [
   "Websites", 
   "Web Applications", 
-  "Mobile Apps", 
-  "Content Management Systems (CMS)", 
   "E-commerce Solutions", 
-  "Interactive Media", 
-  "Clinical Research Portal", 
-  "SharePoint",
-  "Automated Solutions", 
-  "AI Solutions", 
-  "NPM Packages"
+  "Frontend Development", 
+  "Backend Development", 
+  "Database Management", 
+  "API Development", 
+  "Cloud Services", 
+  "DevOps", 
+  "UI/UX Design", 
+  "Performance Optimization", 
+  "Security Solutions", 
+  "Testing and QA", 
+  "Documentation and Technical Writing"
 ];
 
 export const social_icons = [
@@ -74,7 +77,7 @@ export const contact_info = {
   email: "shubhamkumar200308@gmail.com",
   whatsapp: "https://wa.me/8521298191",
   location: {
-    coordinates: "23.4133157° N, 85.4044843° E",
+    coordinates: "23.4133° N, 85.4044° E",
     mapUrl: "https://www.google.com/maps?q=23.4133157,85.4044843"
   }
 };

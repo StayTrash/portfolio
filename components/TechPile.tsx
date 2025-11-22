@@ -127,7 +127,7 @@ export default function TechPile({ }: TechPileProps) {
 
   return (
     <div className="w-full h-full relative overflow-hidden bg-[#0a0a0a]" ref={sceneRef}>
-      <h3 className="text-3xl font-bold text-red-600 absolute top-8 left-8 z-10 pointer-events-none">
+      <h3 className="text-3xl font-semibold text-red-600 absolute top-8 left-8 z-10 pointer-events-none">
         What I Work With...
       </h3>
       {/* <div className="absolute top-8 right-8 z-10 pointer-events-none animate-pulse text-white/20">
