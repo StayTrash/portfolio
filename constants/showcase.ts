@@ -11,7 +11,7 @@ export interface Experience {
   role: string;
   company: string;
   date: string;
-  desc: string;
+  desc: string[];
 }
 
 export interface Education {
@@ -67,7 +67,12 @@ export const experience_data: Experience[] = [
     role: "Frontend Developer",
     company: "Relish Developers Solutions",
     date: "June 2025 - Present",
-    desc: "Built award-winning immersive web experiences for global brands."
+    desc: [
+      "Contributed to 6 repositories, merging 90+ pull requests and delivering 18k+ lines of code across frontend stack (Next.js, TypeScript).",
+      "Improved frontend performance by implementing lazy loading, dynamic imports, code-splitting, and caching, reducing page load time by nearly 35% and improving FCP and LCP while significantly lowering TBT.",
+      "Implemented an automated product tagging system to streamline classification for shipping partners, improving logistics accuracy and reducing manual intervention by 40%.",
+      "Architected n8n-based AI agents for PDF data extraction, Google Analytics auto-reporting, and a website sales assistant, reducing manual operations by over 50% and speeding up support tasks by 30%."
+    ]
   }
 ];
 
