@@ -5,11 +5,11 @@ import { MoveRight } from 'lucide-react';
 import { tech_stack_items } from '@/constants/data';
 
 interface TechPileProps {
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) {
+export default function TechPile({ }: TechPileProps) {
   const sceneRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<any>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -41,26 +41,31 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
     const { Engine, World, Bodies, Mouse, MouseConstraint, Runner, Events, Body } = Matter;
 
     const engine = Engine.create();
+    engine.world.gravity.y = 0.8; // Slightly reduced gravity for smoother motion
     engineRef.current = engine;
 
     const width = sceneRef.current.clientWidth;
     const height = sceneRef.current.clientHeight;
 
-    const wallOptions = { isStatic: true, render: { visible: false }, friction: 0.5, restitution: 0.2 };
+    const wallOptions = { isStatic: true, render: { visible: false }, friction: 0.3, restitution: 0.3 };
     const ground = Bodies.rectangle(width / 2, height + 50, width, 100, wallOptions);
     const leftWall = Bodies.rectangle(-50, height / 2, 100, height * 2, wallOptions);
     const rightWall = Bodies.rectangle(width + 50, height / 2, 100, height * 2, wallOptions);
     
+    const iconSize = 40;
+    const radius = iconSize / 2;
+    
     const bodies = tech_stack_items.map((_, i) => {
-      const x = Math.random() * (width - 80) + 40;
+      const x = Math.random() * (width - iconSize) + radius;
       const y = -Math.random() * 500 - 50; 
-      const iconSize = 40;
       
-      return Bodies.circle(x, y, iconSize / 2, { 
-        restitution: 0.4, 
-        friction: 0.5,
-        density: 0.002, 
-        angle: Math.random() * Math.PI * 2
+      return Bodies.circle(x, y, radius, { 
+        restitution: 0.5, 
+        friction: 0.3,
+        frictionAir: 0.01,
+        density: 0.001, 
+        angle: Math.random() * Math.PI * 2,
+        chamfer: { radius: 2 }
       });
     });
 
@@ -70,7 +75,8 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
       constraint: {
-        stiffness: 0.1,
+        stiffness: 0.4,
+        damping: 0.1,
         render: { visible: false }
       }
     });
@@ -81,7 +87,10 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
     }
     World.add(engine.world, mouseConstraint);
 
-    const runner = Runner.create();
+    const runner = Runner.create({ 
+      delta: 1000 / 60, // 60 FPS
+      isFixed: true 
+    });
     Runner.run(runner, engine);
 
     Events.on(engine, 'afterUpdate', () => {
@@ -90,7 +99,9 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
             if (card) {
                 const { x, y } = body.position;
                 const angle = body.angle;
-                card.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0) rotate(${angle}rad)`;
+                const offset = radius;
+                card.style.transform = `translate3d(${x - offset}px, ${y - offset}px, 0) rotate(${angle}rad)`;
+                card.style.opacity = y > height + 100 ? '0' : '1';
             }
         });
     });
@@ -115,7 +126,7 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
   }, [isMatterLoaded]);
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#0a0a0a]" ref={sceneRef} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div className="w-full h-full relative overflow-hidden bg-[#0a0a0a]" ref={sceneRef}>
       <h3 className="text-3xl font-bold text-red-600 absolute top-8 left-8 z-10 pointer-events-none">
         What I Work With...
       </h3>
@@ -127,11 +138,15 @@ export default function TechPile({ onMouseEnter, onMouseLeave }: TechPileProps) 
         <div
           key={i}
           ref={(el) => { cardsRef.current[i] = el; }}
-          className="absolute top-0 left-0 w-[40px] h-[40px] flex items-center justify-center cursor-grab active:cursor-grabbing select-none z-20 will-change-transform hover:scale-110 transition-transform"
+          className="absolute top-0 left-0 w-[40px] h-[40px] flex items-center justify-center cursor-grab active:cursor-grabbing select-none z-20 will-change-transform pointer-events-auto"
         >
           <item.icon 
             size={40} 
-            style={{ color: item.brandColor || 'currentColor' }}
+            style={{ 
+              color: item.brandColor === '#000000' || item.brandColor === '#181717' 
+                ? '#ffffff' 
+                : (item.brandColor || 'currentColor')
+            }}
           />
         </div>
       ))}

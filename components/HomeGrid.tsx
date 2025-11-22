@@ -8,7 +8,7 @@ import {
 import { FaXTwitter } from 'react-icons/fa6';
 import GridCell from '@/components/GridCell';
 import TechPile from '@/components/TechPile';
-import { work_tags, contact_info } from '@/constants/data';
+import { work_tags, contact_info, tech_stack_items } from '@/constants/data';
 
 interface HomeGridProps {
   textEnter: () => void;
@@ -33,8 +33,8 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
         <GridCell className="flex flex-col">
           <h3 
             className="text-4xl font-bold text-red-600 mb-4 leading-tight"
-            onMouseEnter={redTextEnter || textEnter}
-            onMouseLeave={redTextLeave || textLeave}
+            // onMouseEnter={redTextEnter || textEnter}
+            // onMouseLeave={redTextLeave || textLeave}
           >Hey, welcome to my site!</h3>
           <p className="text-white text-base md:text-lg leading-relaxed mb-3 font-light">
             I'm Shubham, creative developer and <span className="line-through decoration-red-600 decoration-1 text-white">caffeine addict</span> from India, merging design and code with flair.
@@ -92,18 +92,49 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
 
         <GridCell className="md:col-span-2 flex flex-col justify-center">
           <h3 
-            className="text-3xl font-bold text-red-600 mb-8"
-            onMouseEnter={redTextEnter || textEnter}
-            onMouseLeave={redTextLeave || textLeave}
+            className="text-3xl font-bold text-red-600 mb-8 w-fit"
+            // onMouseEnter={redTextEnter || textEnter}
+            // onMouseLeave={redTextLeave || textLeave}
           >Who Am I ?</h3>
-          <div className="text-white text-base md:text-lg leading-relaxed space-y-6 font-light">
+          <div className="text-white text-base md:text-lg leading-relaxed space-y-6 font-light max-w-4xl">
             <p>I'm a creative Full Stack Developer with <span className="line-through decoration-red-600 decoration-1 text-white">several years</span> of experience in the industry. Proficient in various JavaScript frameworks and skilled in other technologies that catch my interest. My tech toolkit is as diverse as a barista's coffee menu. I've applied my skills across <span className="line-through decoration-red-600 decoration-1 text-white">Ed-Tech</span>, <span className="line-through decoration-red-600 decoration-1 text-white">Healthcare</span>, <span className="line-through decoration-red-600 decoration-1 text-white">E-Commerce</span> and <span className="line-through decoration-red-600 decoration-1 text-white">Service-Based industries</span>, consulting for international clients.</p>
             <p>When I'm not responding to your <span className="line-through decoration-red-600 decoration-1 text-white">texts</span> or <span className="line-through decoration-red-600 decoration-1 text-white">emails</span>, you can safely assume I've packed my bags and escaped on a much-needed vacation.</p>
           </div>
         </GridCell>
 
-        <GridCell className="md:col-span-2 relative overflow-hidden min-h-[400px] !p-0">
-          <TechPile onMouseEnter={textEnter} onMouseLeave={textLeave} />
+        <GridCell className="md:col-span-1 lg:col-span-1 relative overflow-hidden min-h-[400px] !p-0">
+          <TechPile onMouseEnter={redTextEnter || textEnter} onMouseLeave={redTextLeave || textLeave} />
+        </GridCell>
+
+        <GridCell className="md:col-span-1 lg:col-span-1 flex flex-col">
+          <h3 
+            className="text-2xl md:text-3xl font-bold text-red-600 mb-6"
+          >
+            Tech Stack
+          </h3>
+          <div className="grid grid-cols-2 gap-2.5 overflow-y-auto max-h-[350px] pr-2 custom-scrollbar">
+            {tech_stack_items.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 p-2 rounded-lg bg-[#111] border border-white/10 hover:border-white/30 hover:bg-[#151515] transition-all duration-300 group cursor-default"
+              >
+                <div className="shrink-0 w-7 h-7 flex items-center justify-center">
+                  <item.icon 
+                    size={18} 
+                    style={{ 
+                      color: item.brandColor === '#000000' || item.brandColor === '#181717' 
+                        ? '#ffffff' 
+                        : (item.brandColor || 'currentColor')
+                    }}
+                    className="group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <span className="text-white text-xs font-medium group-hover:text-red-600 transition-colors duration-300 truncate">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </GridCell>
 
         <GridCell className="md:col-span-2">

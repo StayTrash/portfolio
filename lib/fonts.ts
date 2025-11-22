@@ -110,7 +110,7 @@ export const font_face_declarations = `
 
 export const global_styles = `
   body { font-family: 'Outfit', sans-serif; }
-  .hero-text-transition { transition: opacity 0.15s ease-in-out, transform 0.15s ease; }
+  .hero-text-transition { transition: opacity 0.08s ease-in-out, transform 0.08s ease; }
   .fade-in { animation: fadeIn 0.5s ease-in-out; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   
