@@ -24,33 +24,33 @@ export interface Education {
 export const showcase_projects: Project[] = [
   {
     title: "Tutorly",
-    desc: "A futuristic shopping platform built with React and WebGL product views.",
-    tags: ["React", "Three.js", "Stripe"],
+    desc: "Developed an AI-powered tutoring platform with voice-interactive capabilities, enabling real-time personalized learning.",
+    tags: ["Next.js", "React", "Typescript", "Supabase", "VAPI SDK", "Tailwind CSS"],
     color: "border-red-500",
     github: "https://github.com/StayTrash/Tutorly---AI-Tutor",
     live: "https://tutorly-liart.vercel.app/"
   },
   {
     title: "Scrubi",
-    desc: "Smart productivity app using OpenAI to auto-schedule your day.",
-    tags: ["Next.js", "OpenAI API", "Tailwind"],
-    color: "border-blue-500",
+    desc: "A modern web app with real-time collaboration, a virtual canvas for hand-drawn visuals and an interactive UI.",
+    tags: ["Next.js", "React", "Typescript", "Convex", "Excalidraw Extension", "Tailwind CSS"],
+    color: "border-red-500",
     github: "https://github.com/StayTrash/Scrubi",
     live: "https://scrubi.vercel.app/"
   },
   {
     title: "TrueClean",
-    desc: "Real-time financial data visualization with websocket integrations.",
-    tags: ["Vue", "D3.js", "Firebase"],
-    color: "border-green-500",
+    desc: "A cleaning services landing page website with a modern, responsive design and seamless user experience.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    color: "border-red-500",
     github: "https://github.com/StayTrash/cleaning-website",
     live: "https://cleaning-website-phi.vercel.app/"
   },
   {
     title: "KharidLo",
-    desc: "Interactive visualization of social connections and network analysis.",
-    tags: ["React Flow", "GraphQL", "Neo4j"],
-    color: "border-purple-500",
+    desc: "Built an e-commerce web app with secure JWT auth, PayPal payments, and dynamic product management.",
+    tags: ["React", "Redux Toolkit", "Express.js", "MongoDB", "Tailwind CSS"],
+    color: "border-red-500",
     github: "https://github.com/StayTrash/KharidLo-e-commerce-",
     live: "https://kharidlo-b4cd.onrender.com/"
   }
