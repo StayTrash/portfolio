@@ -114,57 +114,15 @@ export default function ShowcasePage() {
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
               <GridCell 
-                className={`flex flex-col justify-between min-h-[360px] md:min-h-[420px] group relative overflow-hidden border-l-[6px] ${colors.border} transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl bg-gradient-to-br from-[#0a0a0a] to-[#111111]`}
+                className={`flex flex-col justify-between min-h-[360px] md:min-h-[420px] group relative overflow-hidden transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl bg-gradient-to-br from-[#0a0a0a] to-[#111111]`}
               >
-                {/* Animated gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradientStrong} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
                 
-                {/* Decorative corner accent */}
-                <div 
-                  className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    background: `linear-gradient(to bottom right, ${
-                      colorName === 'red' ? 'rgba(239,68,68,0.1)' : 
-                      colorName === 'blue' ? 'rgba(59,130,246,0.1)' : 
-                      colorName === 'green' ? 'rgba(34,197,94,0.1)' : 
-                      'rgba(168,85,247,0.1)'
-                    }, transparent)`
-                  }}
-                ></div>
-                <div 
-                  className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-2xl"
-                  style={{
-                    background: `linear-gradient(to top left, ${
-                      colorName === 'red' ? 'rgba(239,68,68,0.05)' : 
-                      colorName === 'blue' ? 'rgba(59,130,246,0.05)' : 
-                      colorName === 'green' ? 'rgba(34,197,94,0.05)' : 
-                      'rgba(168,85,247,0.05)'
-                    }, transparent)`
-                  }}
-                ></div>
-                
-                {/* Project number with glow effect */}
+                {/* Project number */}
                 <div className="absolute top-6 right-6 z-10 opacity-15 group-hover:opacity-40 transition-all duration-500">
-                  <div className="relative">
-                    <span className="text-7xl md:text-8xl font-black text-white leading-none tracking-tighter opacity-20">
-                      {(i + 1).toString().padStart(2, '0')}
-                    </span>
-                    <span className={`absolute inset-0 text-7xl md:text-8xl font-black leading-none tracking-tighter blur-sm opacity-30 ${colors.text}`}>
-                      {(i + 1).toString().padStart(2, '0')}
-                    </span>
-                  </div>
+                  <span className="text-7xl md:text-8xl font-black text-white leading-none tracking-tighter opacity-20">
+                    {(i + 1).toString().padStart(2, '0')}
+                  </span>
                 </div>
-
-                {/* Decorative line */}
-                <div 
-                  className="absolute top-0 left-[6px] w-px h-16 opacity-30 group-hover:opacity-60 transition-opacity duration-500"
-                  style={{
-                    backgroundColor: colorName === 'red' ? 'rgb(239, 68, 68)' : 
-                                   colorName === 'blue' ? 'rgb(59, 130, 246)' : 
-                                   colorName === 'green' ? 'rgb(34, 197, 94)' : 
-                                   'rgb(168, 85, 247)'
-                  }}
-                ></div>
 
                 {/* Main content */}
                 <div className="relative z-10 transition-all duration-700 md:group-hover:opacity-25 pb-24 md:pb-0 flex flex-col h-full">
