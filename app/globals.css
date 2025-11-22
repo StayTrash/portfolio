@@ -37,7 +37,7 @@ body {
 }
 
 .hero-text-transition {
-  transition: opacity 0.08s ease-in-out, transform 0.08s ease;
+  transition: opacity 0.04s ease-in-out, transform 0.04s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
