@@ -20,8 +20,8 @@ interface HomeGridProps {
 export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLeave }: HomeGridProps) {
   const socialIcons = [
     { Icon: Mail, href: `mailto:${contact_info.email}` },
-    { Icon: Github, href: "https://github.com" },
-    { Icon: Linkedin, href: "https://linkedin.com" },
+    { Icon: Github, href: "https://github.com/StayTrash" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/shubham-kumar-8944b325b/" },
     { Icon: Phone, href: `tel:+8521298191` },
     { Icon: FaXTwitter, href: "https://x.com/shubham__0_5" }
   ];

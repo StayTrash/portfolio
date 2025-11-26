@@ -65,8 +65,8 @@ export const work_tags = [
 export const social_icons = [
   { name: "Mail", href: "mailto:shubhamkumar200308@gmail.com" },
   { name: "X", href: "https://x.com/shubham__0_5" },
-  { name: "Github", href: "https://github.com" },
-  { name: "Linkedin", href: "https://linkedin.com" },
+  { name: "Github", href: "https://github.com/StayTrash" },
+  { name: "Linkedin", href: "https://www.linkedin.com/in/shubham-kumar-8944b325b/" },
   { name: "Instagram", href: "https://instagram.com" },
   { name: "Layers", href: "#" },
   { name: "Phone", href: "tel:+91-8521298191" },
