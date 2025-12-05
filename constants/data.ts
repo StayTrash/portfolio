@@ -46,19 +46,19 @@ export const tech_stack_items: TechItem[] = [
 ];
 
 export const work_tags = [
+  "UI/UX Design", 
   "Websites", 
+  "DevOps", 
+  "Cloud Services", 
+  "Testing and QA", 
+  "API Development", 
   "Web Applications", 
-  "E-commerce Solutions", 
+  "Security Solutions", 
   "Frontend Development", 
   "Backend Development", 
   "Database Management", 
-  "API Development", 
-  "Cloud Services", 
-  "DevOps", 
-  "UI/UX Design", 
+  "E-commerce Solutions", 
   "Performance Optimization", 
-  "Security Solutions", 
-  "Testing and QA", 
   "Documentation and Technical Writing"
 ];
 
