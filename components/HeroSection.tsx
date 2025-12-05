@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { hero_font_styles, font_transition_interval } from '@/constants/fonts';
+import { role_variations } from '@/constants/data';
 
 interface HeroSectionProps {
   textEnter: () => void;
@@ -10,6 +11,9 @@ interface HeroSectionProps {
 
 export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) {
   const [currentStyleIndex, setCurrentStyleIndex] = useState(0);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [displayRole, setDisplayRole] = useState(role_variations[0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,6 +21,22 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
     }, font_transition_interval);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const roleInterval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        const nextIndex = (currentRoleIndex + 1) % role_variations.length;
+        setDisplayRole(role_variations[nextIndex]);
+        setCurrentRoleIndex(nextIndex);
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 50);
+      }, 400);
+    }, 3000);
+
+    return () => clearInterval(roleInterval);
+  }, [currentRoleIndex]);
 
   return (
     <section className="relative w-full h-screen flex flex-col items-center justify-center sticky top-0">
@@ -54,9 +74,17 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
                   <h2 className="text-base md:text-2xl font-semibold text-white leading-tight truncate w-full">
                     Shubham Kumar
                   </h2>
-                  <p className="text-[10px] md:text-sm text-white-400 font-normal leading-tight">
-                    Creative Developer
-                  </p>
+                  <div className="relative h-[14px] md:h-[20px] overflow-hidden">
+                    <p 
+                      className={`text-[10px] md:text-sm text-white-400 font-normal leading-tight whitespace-nowrap transition-all duration-500 ease-in-out ${
+                        isAnimating 
+                          ? 'opacity-0 -translate-y-2 scale-95' 
+                          : 'opacity-100 translate-y-0 scale-100'
+                      }`}
+                    >
+                      {displayRole}
+                    </p>
+                  </div>
               </div>
           </div>
           {/* Mobile: Transitioning text below card */}

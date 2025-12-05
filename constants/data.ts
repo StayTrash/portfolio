@@ -82,3 +82,16 @@ export const contact_info = {
   }
 };
 
+export const role_variations = [
+  "Creative Developer",
+  "Full Stack Developer",
+  "Problem Solver",
+  // "Code Artist",
+  "Tech Enthusiast",
+  "UI/UX Designer",
+  "Web Architect",
+  "Innovation Seeker",
+  // "Digital Craftsman",
+  "Solution Builder"
+];
+
