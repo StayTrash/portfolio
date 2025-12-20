@@ -262,39 +262,35 @@ export default function ShowcasePage() {
               const isExpanded = expandedExperience === i;
               
               return (
-                <GridCell key={i} className="flex flex-col gap-3 md:gap-4 py-6 md:py-8 group">
+                <GridCell 
+                  key={i} 
+                  className="flex flex-col gap-3 md:gap-4 py-6 md:py-8 group cursor-pointer"
+                  onClick={() => toggle_experience(i)}
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                >
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 md:gap-4">
                     <div className="flex-1 min-w-0 flex items-start justify-between gap-3">
                       <h3 className="text-lg md:text-xl font-bold text-white break-words">{exp.role} <span className="text-red-500">@ {exp.company}</span></h3>
-                      <button
-                        onClick={() => toggle_experience(i)}
-                        className="md:hidden flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-red-500/50 transition-all duration-300 shrink-0"
-                        onMouseEnter={textEnter}
-                        onMouseLeave={textLeave}
-                      >
+                      <div className="md:hidden flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:bg-white/10 group-hover:border-red-500/50 transition-all duration-300 shrink-0 pointer-events-none">
                         {isExpanded ? (
                           <ChevronUp size={16} className="text-white" />
                         ) : (
                           <ChevronDown size={16} className="text-white" />
                         )}
-                      </button>
+                      </div>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">
-                      <div className="flex items-center gap-2 text-gray-500 font-mono text-[10px] md:text-xs border border-white/10 px-3 py-1.5 md:py-1 rounded-full shrink-0">
+                      <div className="flex items-center gap-2 text-gray-500 font-mono text-[10px] md:text-xs border border-white/10 px-3 py-1.5 md:py-1 rounded-full shrink-0 pointer-events-none">
                         <Calendar size={10} /> <span className="whitespace-nowrap">{exp.date}</span>
                       </div>
-                      <button
-                        onClick={() => toggle_experience(i)}
-                        className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 hover:border-red-500/50 group-hover:border-red-500/30 transition-all duration-300 shrink-0"
-                        onMouseEnter={textEnter}
-                        onMouseLeave={textLeave}
-                      >
+                      <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 border border-white/10 group-hover:bg-white/10 group-hover:border-red-500/30 transition-all duration-300 shrink-0 pointer-events-none">
                         {isExpanded ? (
                           <ChevronUp size={16} className="text-white group-hover:text-red-500 transition-colors duration-300" />
                         ) : (
                           <ChevronDown size={16} className="text-white group-hover:text-red-500 transition-colors duration-300" />
                         )}
-                      </button>
+                      </div>
                     </div>
                   </div>
                   <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
