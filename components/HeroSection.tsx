@@ -118,4 +118,3 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
     </section>
   );
 }
-
