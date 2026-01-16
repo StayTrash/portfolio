@@ -70,7 +70,7 @@ export default function HomeGrid({ textEnter, textLeave, redTextEnter, redTextLe
           <div>
             <p className="text-gray-400 text-base md:text-lg mb-6 leading-relaxed font-light">Have an exciting project or job opening? Dive into my résumé.</p>
             <a 
-              href="https://drive.google.com/file/d/1_0WM-r6KwEK0WpWDLdL5MeriHLsJozRr/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1RLNvzcylzRtWJJ_hfethAoUIMoFw2Amd/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full bg-white text-black py-3 px-5 rounded-lg font-semibold flex items-center justify-between hover:bg-gray-200 transition-colors cursor-pointer"

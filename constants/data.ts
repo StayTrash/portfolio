@@ -76,6 +76,7 @@ export const social_icons = [
 export const contact_info = {
   email: "shubhamkumar200308@gmail.com",
   whatsapp: "https://wa.me/8521298191",
+  resume: "https://drive.google.com/file/d/1RLNvzcylzRtWJJ_hfethAoUIMoFw2Amd/view?usp=sharing",
   location: {
     coordinates: "23.4133° N, 85.4044° E",
     mapUrl: "https://www.google.com/maps?q=23.4133157,85.4044843"
