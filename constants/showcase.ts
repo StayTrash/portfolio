@@ -64,7 +64,7 @@ export const experience_data: Experience[] = [
   //   desc: "Leading the frontend architecture for enterprise dashboard solutions."
   // },
   {
-    role: "Frontend Developer Intern",
+    role: "Software Engineer Intern",
     company: "Relish Developers Solutions",
     date: "June 2025 - Present",
     desc: [
