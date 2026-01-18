@@ -17,19 +17,24 @@ export default function DitherOverlay() {
     return `data:image/svg+xml,${encodeURIComponent(svg)}`;
   };
 
+  const style: React.CSSProperties & {
+    WebkitImageRendering?: string;
+    msImageRendering?: string;
+  } = {
+    backgroundImage: `url("${createCheckerboard()}")`,
+    backgroundSize: '4px 4px',
+    backgroundRepeat: 'repeat',
+    mixBlendMode: 'overlay',
+    opacity: 0.7,
+    imageRendering: 'pixelated',
+    WebkitImageRendering: 'pixelated',
+    msImageRendering: 'pixelated'
+  };
+
   return (
     <div 
       className="fixed inset-0 pointer-events-none z-[9999]"
-      style={{
-        backgroundImage: `url("${createCheckerboard()}")`,
-        backgroundSize: '4px 4px',
-        backgroundRepeat: 'repeat',
-        mixBlendMode: 'overlay',
-        opacity: 0.7,
-        imageRendering: 'pixelated',
-        WebkitImageRendering: 'pixelated',
-        msImageRendering: 'pixelated'
-      }}
+      style={style}
     />
   );
 }
