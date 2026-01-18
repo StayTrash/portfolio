@@ -7,6 +7,7 @@ import Cursor from '@/components/Cursor';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import HomeGrid from '@/components/HomeGrid';
+import DitherOverlay from '@/components/DitherOverlay';
 
 export default function Home() {
   const { variants, cursorVariant, textEnter, textLeave, redTextEnter, redTextLeave } = useCursor();
@@ -18,6 +19,7 @@ export default function Home() {
       <Navigation textEnter={textEnter} textLeave={textLeave} />
       <HeroSection textEnter={textEnter} textLeave={textLeave} />
       <HomeGrid textEnter={textEnter} textLeave={textLeave} redTextEnter={redTextEnter} redTextLeave={redTextLeave} />
+      <DitherOverlay />
     </div>
   );
 }

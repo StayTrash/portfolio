@@ -39,7 +39,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
   }, [currentRoleIndex]);
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center sticky top-0">
+    <section className="relative w-full h-screen min-h-screen flex flex-col items-center justify-center sticky top-0 overflow-hidden">
       {/* Background Text - Desktop: centered behind card */}
       <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
         {hero_font_styles.map((style, index) => (
@@ -108,6 +108,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
             ))}
           </div>
       </div>
+      {/* Mobile: Bottom texts positioned at bottom of viewport */}
       <div className="absolute bottom-4 left-4 md:bottom-6 md:left-12 z-20 text-xs md:text-sm">
           <div className="text-white mb-1 text-[10px] md:text-sm">Working as</div>
           <div className="text-white font-semibold text-sm md:text-lg">Full Stack Developer</div>

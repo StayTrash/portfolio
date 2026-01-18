@@ -88,3 +88,139 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Dither effect support */
+* {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Ensure dither overlay doesn't interfere with interactions */
+.dither-overlay {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Animated border effect for showcase button */
+.showcase-border-animated {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+  border: 2px solid transparent;
+}
+
+.showcase-border-animated::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    #dc2626,
+    #ef4444,
+    #f87171,
+    #fca5a5,
+    #f87171,
+    #ef4444,
+    #dc2626,
+    #991b1b,
+    #dc2626
+  );
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  animation: borderGradient 3s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.showcase-border-animated::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: -1;
+}
+
+.showcase-border-animated:hover::before {
+  animation-duration: 1s;
+}
+
+.showcase-border-animated:hover::after {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+/* Mouse-following glow effect */
+.showcase-border-animated .glow-effect {
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(220, 38, 38, 0.5),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.showcase-border-animated:hover .glow-effect {
+  opacity: 1;
+}
+
+@keyframes borderGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animated gradient text effect for showcase */
+.showcase-text-animated {
+  background: linear-gradient(
+    90deg,
+    #dc2626 0%,
+    #ef4444 25%,
+    #f87171 50%,
+    #ef4444 75%,
+    #dc2626 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 3s linear infinite;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.showcase-border-animated:hover .showcase-text-animated {
+  animation-duration: 1.5s;
+  filter: brightness(1.2);
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
