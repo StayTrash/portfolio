@@ -23,6 +23,14 @@ export interface Education {
 
 export const showcase_projects: Project[] = [
   {
+    title: "Linear Flow",
+    desc: "Built a full-stack job application tracking platform to manage end-to-end job search workflows.",
+    tags: ["Next.js", "React", "Motion", "NextAuth","Redux Toolkit", "Tailwind CSS"],
+    color: "border-red-500",
+    github: "https://github.com/StayTrash/application-tracker",
+    live: "https://linear-flow-rose.vercel.app/"
+  },
+  {
     title: "Tutorly",
     desc: "Developed an AI-powered tutoring platform with voice-interactive capabilities, enabling real-time personalized learning.",
     tags: ["Next.js", "React", "Typescript", "Supabase", "VAPI SDK", "Tailwind CSS"],
@@ -37,6 +45,14 @@ export const showcase_projects: Project[] = [
     color: "border-red-500",
     github: "https://github.com/StayTrash/Scrubi",
     live: "https://scrubi.vercel.app/"
+  },
+  {
+    title: "Crypto Landing Page",
+    desc: "A crypto landing page website with a modern UI/UX design, bento grid and a smooth scroll animation.",
+    tags: ["Next.js", "React", "Motion", "Tailwind CSS"],
+    color: "border-red-500",
+    github: "https://github.com/StayTrash/crypto-landing-page",
+    live: "https://crypto-landing-page-mu.vercel.app/"
   },
   {
     title: "TrueClean",
@@ -66,7 +82,7 @@ export const experience_data: Experience[] = [
   {
     role: "Software Engineer Intern",
     company: "Relish Developers Solutions",
-    date: "June 2025 - Present",
+    date: "June 2025 - December 2025",
     desc: [
       "Contributed to 6 repositories, merging 110+ pull requests and delivering 18k+ lines of code across frontend stacks (Next.js, TypeScript).",
       "Improved frontend performance by implementing lazy loading, code-splitting and caching, reducing page load time by 35%, and improving FCP, LCP and TBT metrics.",

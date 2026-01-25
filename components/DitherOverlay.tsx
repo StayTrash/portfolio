@@ -1,40 +1,62 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function DitherOverlay() {
-  // Create a checkerboard pattern that's clearly visible
-  // Using a 4x4 pixel checkerboard pattern
-  const createCheckerboard = () => {
-    const svg = `
-      <svg width="4" height="4" xmlns="http://www.w3.org/2000/svg">
-        <rect width="2" height="2" fill="rgba(255, 255, 255, 0.1)"/>
-        <rect x="2" y="0" width="2" height="2" fill="rgba(0, 0, 0, 0.08)"/>
-        <rect x="0" y="2" width="2" height="2" fill="rgba(0, 0, 0, 0.08)"/>
-        <rect x="2" y="2" width="2" height="2" fill="rgba(255, 255, 255, 0.1)"/>
-      </svg>
-    `;
-    return `data:image/svg+xml,${encodeURIComponent(svg)}`;
-  };
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [backgroundImage, setBackgroundImage] = useState<string>('');
 
-  const style: React.CSSProperties & {
-    WebkitImageRendering?: string;
-    msImageRendering?: string;
-  } = {
-    backgroundImage: `url("${createCheckerboard()}")`,
-    backgroundSize: '4px 4px',
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas size
+    const size = 200; // Size of the noise pattern
+    canvas.width = size;
+    canvas.height = size;
+
+    // Create noise texture
+    const imageData = ctx.createImageData(size, size);
+    const data = imageData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      // Generate random noise value (0-255)
+      const noise = Math.random() * 255;
+      
+      // Apply noise with varying opacity for more natural look
+      const opacity = Math.random() * 0.15 + 0.05; // 0.05 to 0.2 opacity
+      
+      data[i] = noise;     // R
+      data[i + 1] = noise; // G
+      data[i + 2] = noise; // B
+      data[i + 3] = opacity * 255; // A
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    
+    // Set the background image from canvas data URL
+    setBackgroundImage(canvas.toDataURL());
+  }, []);
+
+  const style: React.CSSProperties = {
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
+    backgroundSize: '200px 200px',
     backgroundRepeat: 'repeat',
     mixBlendMode: 'overlay',
-    opacity: 0.7,
-    imageRendering: 'pixelated',
-    WebkitImageRendering: 'pixelated',
-    msImageRendering: 'pixelated'
+    opacity: 0.6,
+    imageRendering: 'auto',
   };
 
   return (
-    <div 
-      className="fixed inset-0 pointer-events-none z-[9999]"
-      style={style}
-    />
+    <>
+      <canvas ref={canvasRef} style={{ display: 'none' }} />
+      <div 
+        className="fixed inset-0 pointer-events-none z-[9999]"
+        style={style}
+      />
+    </>
   );
 }

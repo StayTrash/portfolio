@@ -114,7 +114,7 @@ export default function HeroSection({ textEnter, textLeave }: HeroSectionProps) 
           <div className="text-white font-semibold text-sm md:text-lg">Full Stack Developer</div>
       </div>
       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-12 z-20 text-xs md:text-sm text-white">
-          <div>2025</div>
+          <div>2026</div>
       </div>
     </section>
   );
