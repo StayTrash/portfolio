@@ -84,11 +84,11 @@ export const experience_data: Experience[] = [
     company: "Relish Developers Solutions",
     date: "June 2025 - December 2025",
     desc: [
-      "Contributed to 6 repositories, merging 110+ pull requests and delivering 18k+ lines of code across frontend stacks (Next.js, TypeScript).",
-      "Improved frontend performance by implementing lazy loading, code-splitting and caching, reducing page load time by 35%, and improving FCP, LCP and TBT metrics.",
-      "Implemented automated product tagging system for shipping partners, improving shipping classification accuracy by 40% and reducing manual intervention, saving 10+ hours of operational work every week.",
-      "Architected n8n-based AI agents for PDF data extraction, Google Analytics auto-reporting, and a website sales assistant, reducing manual operations by over 50% and speeding up support tasks by 30%.",
-      "Integrated Cloudflare Turnstile Captcha into user forms with backend verification, reducing automated spam submissions by 95%+ and improving platform security.",
+      "Spearheaded development across 6 repositories, managing 125+ pull requests and shipping 22k+ lines of scalable code within the frontend stack (Next.js, TypeScript).",
+      "Boosted frontend performance by applying lazy loading, code-splitting, and caching strategies, slashing page load times by 35% and optimizing FCP, LCP, and TBT metrics.",
+      "Engineered an automated product tagging system for logistics partners, enhancing classification accuracy by 40% and eliminating 10+ hours of manual operational work weekly.",
+      "Architected n8n-based AI agents for PDF data extraction, Google Analytics auto-reporting, and a sales assistant, cutting manual intervention by over 50%.",
+      "Deployed Cloudflare Turnstile Captcha into user forms with server-side verification, mitigating automated spam submissions by 95%+ and fortifying platform security.",
     ]
   }
 ];
