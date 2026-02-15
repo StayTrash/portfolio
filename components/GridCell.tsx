@@ -13,7 +13,7 @@ interface GridCellProps {
 export default function GridCell({ children, className = "", onClick, onMouseEnter, onMouseLeave }: GridCellProps) {
   return (
     <div 
-      className={`p-8 md:p-10 border border-white/15 bg-[#0a0a0a] relative hover:border-white/30 transition-colors duration-500 ${className}`}
+      className={`p-5 sm:p-6 md:p-8 lg:p-10 border border-white/15 bg-[#0a0a0a] relative hover:border-white/30 transition-colors duration-500 ${className}`}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
