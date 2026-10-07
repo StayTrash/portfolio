@@ -76,10 +76,10 @@ export const social_icons = [
 export const contact_info = {
   email: "shubhamkumar200308@gmail.com",
   whatsapp: "https://wa.me/8521298191",
-  resume: "https://drive.google.com/file/d/1yx-RO_hl3hnuRdgvBSG1I-BQsT3FQ59Z/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1xgXqInFXCvuM8yGZd2sBrCCQ_G0eNHDt/view?usp=sharing",
   location: {
-    coordinates: "23.4133° N, 85.4044° E",
-    mapUrl: "https://www.google.com/maps?q=23.4133157,85.4044843"
+    coordinates: "28.4575° N, 77.0263° E",
+    mapUrl: "https://www.google.com/maps?q=28.4575,77.0263"
   }
 };
 

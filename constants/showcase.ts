@@ -82,7 +82,7 @@ export const experience_data: Experience[] = [
   {
     role: "Software Engineer Intern",
     company: "Relish Developers Solutions",
-    date: "June 2025 - December 2025",
+    date: "June 2025 - July 2026",
     desc: [
       "Spearheaded development across 6 repositories, managing 125+ pull requests and shipping 22k+ lines of scalable code within the frontend stack (Next.js, TypeScript).",
       "Boosted frontend performance by applying lazy loading, code-splitting, and caching strategies, slashing page load times by 35% and optimizing FCP, LCP, and TBT metrics.",
