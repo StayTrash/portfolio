@@ -85,10 +85,11 @@ export const experience_data: Experience[] = [
     date: "June 2025 - July 2026",
     desc: [
       "Spearheaded development across 6 repositories, managing 125+ pull requests and shipping 22k+ lines of scalable code within the frontend stack (Next.js, TypeScript).",
+      "Optimized backend architecture through Redis caching, connection pooling, indexed database queries, asynchronous processing, and efficient API design, reducing response latency by 45% under production workloads.",
       "Boosted frontend performance by applying lazy loading, code-splitting, and caching strategies, slashing page load times by 35% and optimizing FCP, LCP, and TBT metrics.",
-      "Engineered an automated product tagging system for logistics partners, enhancing classification accuracy by 40% and eliminating 10+ hours of manual operational work weekly.",
       "Architected n8n-based AI agents for PDF data extraction, Google Analytics auto-reporting, and a sales assistant, cutting manual intervention by over 50%.",
-      "Deployed Cloudflare Turnstile Captcha into user forms with server-side verification, mitigating automated spam submissions by 95%+ and fortifying platform security.",
+      "Deployed Cloudflare Turnstile CAPTCHA into user forms with server-side verification, mitigating automated spam submissions by 95%+ and fortifying platform security.",
+      "Engineered an automated product tagging system for logistics partners, enhancing classification accuracy by 40% and eliminating 10+ hours of manual operational work weekly.",
     ]
   }
 ];
